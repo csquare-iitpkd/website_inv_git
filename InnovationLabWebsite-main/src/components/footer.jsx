@@ -20,7 +20,7 @@ const Footer = () => {
           <ul>
             <li>
               <FaThumbtack className="footer-icon" />
-              <a href="http://www.google.com/url?q=http%3A%2F%2F192.168.1.35%3A83%2F&sa=D&sntz=1&usg=AOvVaw0fgcL6LK3grR-Zi0LNM8FO"> Online Job Request</a>
+              <a href="https://cfbs.iitpkd.ac.in"> Online Job Request</a>
             </li>
             <li>
               <FaEnvelope className="footer-icon" />
