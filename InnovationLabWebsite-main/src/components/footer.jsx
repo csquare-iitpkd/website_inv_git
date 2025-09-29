@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="footer-logo-section">
           <h2 className="footer-logo">CSquare</h2>
           <p>Your Innovation Hub</p>
-          <FaUser className="footer-icon" />
-          <Link to="/admin_login_page" className="footer-link">Admin Login</Link>
+          {/* <FaUser className="footer-icon" />
+          <Link to="/admin_login_page" className="footer-link">Admin Login</Link> */}
         </div>
 
         <div className="footer-links-section">

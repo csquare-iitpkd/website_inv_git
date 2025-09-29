@@ -9,7 +9,7 @@ const LabAssistantsSection = () => (
       
       {/* Cards container */}
       <div className="mb-8 md:mb-12">
-        <div className="flex justify-between flex-wrap gap-8 max-w-6xl mx-auto">
+        <div className="flex justify-center items-center flex-wrap gap-8 max-w-6xl mx-auto">
           {lbData.map((assistant, index) => (
             <div 
               key={index} 
@@ -20,7 +20,7 @@ const LabAssistantsSection = () => (
               <img 
                 src={assistant.photo} 
                 alt={assistant.name} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-top object-cover"
                 onError={(e) => { e.target.src = "/assets/default-profile.jpg"; }}
               />
 

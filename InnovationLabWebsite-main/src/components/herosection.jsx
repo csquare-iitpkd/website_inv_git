@@ -1,100 +1,84 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import Particles from 'react-tsparticles'; // ✅ Correct
-import { loadFull } from 'tsparticles';
-import '../styles/herosection.css'; // Import the CSS file
 
 const HeroSection = () => {
-  const videoRef = useRef(null);
-  const textRef = useRef(null);
+  const textContentRef = useRef(null);
+  const circuitPathsRef = useRef([]);
 
   useEffect(() => {
-    // Create a timeline for the animations
-    const tl = gsap.timeline({ delay: 4 });
+    const textContent = textContentRef.current;
+    const circuitPaths = circuitPathsRef.current;
+    const circuitNodes = textContent.querySelectorAll('.circuit-node');
 
-    // Animation  for the video/gif to move upward and fade out
-    tl.to(videoRef.current, {
-      y: -150, // Moves video upwards
-      opacity: 0,
-      duration: 0.5,
-      ease: 'power2.out',
+    gsap.set(textContent, { opacity: 0 });
+    gsap.set(circuitPaths, { strokeDasharray: (i, el) => el.getTotalLength(), strokeDashoffset: (i, el) => el.getTotalLength() });
+    gsap.set(circuitNodes, { opacity: 0, scale: 0.5 });
+
+    // Create a GSAP timeline for a controlled sequence
+    const tl = gsap.timeline();
+
+    tl.to(circuitPaths, {
+      strokeDashoffset: 0,
+      duration: 1.5,
+      ease: 'power2.inOut',
+      stagger: 0.2, // Animate paths one after another
     });
 
-    // Animation for text to fade in
-    tl.to(textRef.current, {
+    // 2. Animate the nodes appearing and pulsing
+    tl.to(circuitNodes, {
       opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power2.in',
-    });
+      scale: 1,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'back.out(1.7)',
+    }, "-=1"); 
+
+    // 3. Animate the main text fading in
+    tl.to(textContent, {
+      opacity: 1,
+      duration: 1.5,
+      ease: 'power3.out',
+    }, "-=0.5"); // Overlap slightly for a smoother transition
+
   }, []);
 
-  // Particles setup with your provided options
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
-    <div className="hero-section-wrapper">
-      <div className="hero-section">
-        {/* Particle background */}
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            autoPlay: true,
-            background: {
-              color: { value: '#000000' },
-              opacity: 1,
-            },
-            fullScreen: { enable: false, zIndex: 0 },
-            detectRetina: true,
-            fpsLimit: 120,
-            interactivity: {
-              events: {
-                onClick: { enable: true, mode: 'push' },
-                onHover: { enable: true, mode: 'repulse' }, // Faster hover interaction
-                resize: { enable: true },
-              },
-              modes: {
-                repulse: {
-                  distance: 150, // Reacts from a larger area
-                  duration: 0.2, // Moves away quicker
-                },
-              },
-            },
-            particles: {
-              number: { value: 50, density: { enable: true, area: 800 } },
-              color: { value: '#ff0000', animation: { h: { enable: true, speed: 20, sync: true } } },
-              shape: { type: 'circle' },
-              opacity: { value: 0.7 },
-              size: { value: { min: 2, max: 5 } },
-              move: { enable: true, speed: 2.5 }, // **Increased speed for a more dynamic effect**
-              links: { enable: false },
-            },
-          }}
-        />
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-black">
+      
+      <svg
+        className="absolute w-full max-w-4xl h-auto text-cyan-500/20"
+        viewBox="0 0 800 400"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g stroke="currentColor" strokeWidth="1.5" fill="none">
+          {/* We'll use refs to animate these paths */}
+          <path ref={el => circuitPathsRef.current[0] = el} d="M1 200 H 250 L 300 150 V 50 H 500 L 550 100 H 799" />
+          <path ref={el => circuitPathsRef.current[1] = el} d="M1 200 H 150 L 200 250 H 350 L 400 350 H 799" />
+          <path ref={el => circuitPathsRef.current[2] = el} d="M250 200 L 300 250" />
+          <path ref={el => circuitPathsRef.current[3] = el} d="M500 200 L 450 250" />
+        </g>
+      </svg>
 
-        {/* Video/GIF that will animate */}
-        <div ref={videoRef}>
-          <video
-            src="./assets/videos/hero_animation.mp4"
-            autoPlay
-            loop
-            muted
-          />
-          {/* You can replace this with a <img src="your-gif.gif" /> for a GIF */}
-        </div>
+      <div ref={textContentRef} className="relative z-10 w-full max-w-4xl text-center px-4 opacity-0">
+        
+        <div className="circuit-node absolute top-[48%] left-[30%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
+        <div className="circuit-node absolute top-[36%] left-[62%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
+        <div className="circuit-node absolute top-[61%] left-[48%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
 
-        {/* Text that appears after video moves out */}
-        <div ref={textRef} className="text-content">
-          <h1>CSQUARE INNOVATION CENTER</h1>
-          <p>Indian Institute of Technology,Palakkad</p>
+        <h1 className="text-5xl font-extrabold tracking-tight text-slate-100 sm:text-7xl md:text-8xl">
+          <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+            CSQUARE
+          </span>
+        </h1>
+        <h2 className="mt-2 text-xl font-light uppercase tracking-[0.3em] text-slate-300 sm:text-2xl md:text-4xl">
+          Innovation Center
+        </h2>
+        <div className="mt-8">
+          <p className="text-base font-medium text-amber-300 md:text-lg">
+            Indian Institute of Technology, Palakkad
+          </p>
+          <div className="mx-auto mt-3 h-[1px] w-24 rounded-full bg-amber-300/40"></div>
         </div>
       </div>
     </div>

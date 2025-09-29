@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MissionSection = () => (
-    <section className="py-16 bg-trahsparent">
+    <section className="py-16 bg-trahsparent text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">

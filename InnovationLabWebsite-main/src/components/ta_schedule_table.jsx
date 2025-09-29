@@ -54,7 +54,7 @@ const TAScheduleTable = () => {
     const [schedule] = useState(defaultSchedule);
   
     return (
-      <div className="schedule-container">
+      <div className="schedule-container bg-transparent">
         <h1>TA Schedule</h1>
         <table>
           <thead>

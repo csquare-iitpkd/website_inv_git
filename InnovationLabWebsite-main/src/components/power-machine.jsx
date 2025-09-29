@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TiltCard from "./TiltCard";
 import "../styles/power-machine.css";
+import electricTools from './machinesData/electricTools.json';
+import powerTools from './machinesData/powerTools.json';
+import threeDTools from './machinesData/threeDTools.json';
 
 const ImageSlider = ({ images, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,185 +34,6 @@ const PowerMachine = () => {
     speed: 1000,
   };
 
-  const powerTools = [
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC LASER CUTTER",
-      images: ["/assets/images/cnc-laser.jpg", "/assets/images/cnc-laser.jpg"],
-      make: "Kavone Technology",
-      model: "KL1060",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-  ];
-
-  const electricTools = [
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    // Repeat manually
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "CNC MILLING MACHINE",
-      images: ["/assets/images/cnc-miling.jpg", "/assets/images/cnc-miling.jpg"],
-      make: "Tormach",
-      model: "PCNC 770",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-  ];
-
-  const threeDTools = [
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    // Repeat manually
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-    {
-      title: "FDM 3D PRINTER",
-      images: ["/assets/images/3d-printer.jpg", "/assets/images/3d-printer.jpg"],
-      make: "Ultimaker",
-      model: "Ultimaker 2+",
-      links: { spec: "#", form: "#", charge: "#" },
-    },
-  ];
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -218,9 +42,9 @@ const PowerMachine = () => {
   };
 
   return (
-    <div className="power-machine-page">
+    <div className="power-machine-page bg-transparent">
       {/* Navigation Buttons */}
-      <div className="tool-buttons-container">
+      <div className="tool-buttons-container bg-transparent">
         <button onClick={() => scrollToSection('power-tools')}>Power Tools</button>
         <button onClick={() => scrollToSection('electric-tools')}>Electric Tools</button>
         <button onClick={() => scrollToSection('three-d-tools')}>3D Tools</button>

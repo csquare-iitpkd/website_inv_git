@@ -1,0 +1,58 @@
+[
+    {
+      "title": "ORBITAL SANDER",
+      "images": ["/assets/Facilities/_SON3704.jpg"],
+      "make": "Bosch",
+      "model": "GEX 125-1 AE",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "ANGLE GRINDER",
+      "images": ["/assets/Facilities/_SON3696.jpg"],
+      "make": "Bosch",
+      "model": "",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "ELECTRIC DRILL",
+      "images": ["/assets/Facilities/_SON3715.jpg"],
+      "make": "Bosch",
+      "model": "GSB 10RE",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "ELECTRIC PLANER",
+      "images": ["/assets/Facilities/_SON3713.jpg"],
+      "make": "Bosch",
+      "model": "GHO 26-82 D",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "MARBLE CUTTER",
+      "images": ["/assets/Facilities/_SON3706.jpg"],
+      "make": "Bosch",
+      "model": "",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "WOOD ROUTER",
+      "images": ["/assets/Facilities/_SON3695.jpg"],
+      "make": "Makita",
+      "model": "",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "JIGSAW",
+      "images": ["/assets/Facilities/_SON3722.jpg"],
+      "make": "Bosch",
+      "model": "GST 650",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    },
+    {
+      "title": "HEAT GUN",
+      "images": ["/assets/Facilities/_SON3724.jpg"],
+      "make": "Makita",
+      "model": "",
+      "links": { "spec": "#", "form": "#", "charge": "#" }
+    }
+]

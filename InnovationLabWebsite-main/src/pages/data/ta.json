@@ -1,50 +1,26 @@
 [
     {
-      "name": "Dadi Rishita",
+      "name": "Dev Mittal",
       "title": "Undergraduate TA",
-      "photo": "/assets/rishitha.jpeg",
-      "bio": "Data Science"
-    },
-    {
-      "name": "Saikam Varshita",
-      "title": "Undergraduate TA",
-      "photo": "/assets/varshitha.jpeg",
-      "bio": "Department Name"
-    },
-    {
-      "name": "Chundi Chandu",
-      "title": "Undergraduate TA",
-      "photo": "/assets/chandu.jpeg",
-      "bio": "Department Name"
-    },
-    {
-      "name": "Parvat",
-      "title": "Undergraduate TA",
-      "photo": "/assets/parvat.jpeg",
-      "bio": "Department Name"
-    },
-    {
-      "name": "Vaibhav",
-      "title": "Undergraduate TA",
-      "photo": "/assets/vaibhav.jpeg",
-      "bio": "Department Name"
+      "photo": "/assets/Dev_Mittal.jpeg",
+      "bio": "Civil Engineering"
     },
     {
       "name": "Ram charan",
       "title": "Undergraduate TA",
       "photo": "/assets/ramcharan.jpeg",
-      "bio": "Department Name"
+      "bio": "Computer Science and Engineering"
     },
     {
-      "name": "Pawan Kumar",
+      "name": "Sandeep Kumar",
       "title": "Undergraduate TA",
-      "photo": "/assets/pawan.jpg",
-      "bio": "Department Name"
+      "photo": "/assets/Sandeep_Kumar.jpeg",
+      "bio": "Electrical Engineering"
     },
     {
       "name": "Shubham",
       "title": "Undergraduate TA",
       "photo": "/assets/subham.jpeg",
-      "bio": "Department Name"
+      "bio": "Computer Science and Engineering"
     }
   ]

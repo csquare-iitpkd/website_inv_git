@@ -1,0 +1,30 @@
+[
+  {
+    "title": "SLA 3D PRINTER",
+    "images": ["/assets/Facilities/_SON3802.jpg"],
+    "make": "Prusa",
+    "model": "Original Prusa SL1",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "CURING AND WASHING STATION",
+    "images": ["/assets/Facilities/_SON3802.jpg"],
+    "make": "Prusa",
+    "model": "Original Prusa CW1",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "FDM 3D PRINTER",
+    "images": ["/assets/Facilities/_SON3822.jpg"],
+    "make": "Ultimaker",
+    "model": "Ultimaker 3",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "3D SCANNER",
+    "images": ["/assets/Facilities/_SON3886.jpg"],
+    "make": "Shining 3D",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  }
+]

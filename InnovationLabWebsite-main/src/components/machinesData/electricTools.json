@@ -1,0 +1,149 @@
+[
+  {
+    "title": "CNC LASER CUTTER",
+    "images": ["/assets/Facilities/_SON3676.jpg"],
+    "make": "Kavone",
+    "model": "KL1060",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "CNC MILLING MACHINE",
+    "images": ["/assets/Facilities/_SON3678.jpg"],
+    "make": "Tormach",
+    "model": "PCNC 770",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "DRILL PRESS",
+    "images": ["/assets/Facilities/_SON3684.jpg"],
+    "make": "EIFCO",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "SHARP WINDER",
+    "images": ["/assets/Facilities/_SON3690.jpg"],
+    "make": "Trishul",
+    "model": "TWM-1D",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "METAL CUT-OFF SAW",
+    "images": ["/assets/Facilities/_SON3734.jpg"],
+    "make": "Bosch",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "POWER HACKSAW",
+    "images": ["/assets/Facilities/_SON3737.jpg"],
+    "make": "EIFCO",
+    "model": "Atlas",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "BANDSAW",
+    "images": ["/assets/Facilities/_SON3740.jpg"],
+    "make": "Makita",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "THICKNESS PLANER",
+    "images": ["/assets/Facilities/_SON3743.jpg"],
+    "make": "Makita",
+    "model": "2012NB",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "TABLE SAW",
+    "images": ["/assets/Facilities/_SON3744.jpg"],
+    "make": "Makita",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "BELT & DISC SANDER",
+    "images": ["/assets/Facilities/_SON3751.jpg"],
+    "make": "",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "BENCH DRILL PRESS",
+    "images": ["/assets/Facilities/_SON3756.jpg"],
+    "make": "Makita",
+    "model": "TB131",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "BENCH GRINDER",
+    "images": ["/assets/Facilities/_SON3759.jpg"],
+    "make": "Bosch",
+    "model": "GBG 6",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "ARC WELDER",
+    "images": ["/assets/Facilities/_SON3780.jpg"],
+    "make": "Euro",
+    "model": "GenX MMA 201XP",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "TIG WELDER",
+    "images": ["/assets/Facilities/_SON3773.jpg"],
+    "make": "Ador",
+    "model": "Champ T400",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "TIG WELDER",
+    "images": ["/assets/Facilities/_SON3766.jpg"],
+    "make": "Ador",
+    "model": "Champ TIG 300AD",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "MIG WELDER",
+    "images": ["/assets/Facilities/_SON3770.jpg"],
+    "make": "Ador",
+    "model": "Champ MIG 400",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "CNC PLASMA CUTTER",
+    "images": ["/assets/Facilities/_SON3784.jpg"],
+    "make": "SVP Laser",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "CNC ROUTER",
+    "images": ["/assets/Facilities/_SON3829.jpg"],
+    "make": "",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "MINI LATHE",
+    "images": ["/assets/Facilities/_SON3911.jpg"],
+    "make": "",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "PAINT BOOTH",
+    "images": ["/assets/Facilities/_SON3906.jpg"],
+    "make": "Cleantek",
+    "model": "",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  },
+  {
+    "title": "AIR COMPRESSOR",
+    "images": ["/assets/Facilities/_SON3909.jpg"],
+    "make": "Elgi",
+    "model": "TS15E LD",
+    "links": { "spec": "#", "form": "#", "charge": "#" }
+  }
+]

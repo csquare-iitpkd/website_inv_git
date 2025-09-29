@@ -1,174 +1,74 @@
-// import '../styles/slider.css'; 
-// import React, { useEffect, useState } from 'react';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-
-// const ImageSlider = () => {
-//   const [imageLinks, setImageLinks] = useState([]);
-//   const folderId = '126qTT7sPi0MQgFgOttKGwWl9aKyuZ4sJ'; 
-//   const apiKey = 'AIzaSyAjTf2BaoCVkvoSkac-zRh4JJI9H2BByQs'; 
-//   useEffect(() => {
-//     const fetchImages = async () => {
-//       const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
-//       try {
-//         const response = await fetch(url);
-//         const data = await response.json();
-//         const imageFiles = [] ;
-//         for(var i = 0 ; i<data.files.length ;i++){
-//           imageFiles.push(data.files[i].id) ;
-//         }
-  
-//         const links = [] ;
-//         for(var j = 0 ; j<imageFiles.length ;j++){
-//           links.push(`https://drive.google.com/thumbnail?&id=${imageFiles[j]}`) ;
-//         }
-
-//         setImageLinks(links);
-        
-//       } catch (error) {
-//         console.error('Error fetching images:', error);
-//       }
-//     };
-
-//     fetchImages();
-//   }, [folderId, apiKey]);
-
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 3000,
-//   };
-
-//   return (
-    
-//     <div className="slider-container">
-//       {imageLinks.length > 0 ? (
-//         <Slider {...settings}>
-//           {imageLinks.map((image, index) => (
-//             <div key={index}>
-//               <img src={image} alt={`Slide ${index + 1}`} className="slider-image" />
-//             </div>
-//           ))}
-//         </Slider>
-//       ) : (
-//         <p>Loading images...</p>
-//       )}
-//     </div>
-//   );
-  
-// };
-
-// export default ImageSlider;
-// import '../styles/slider.css'; 
-// import React, { useEffect, useState } from 'react';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-// import { h1 } from 'framer-motion/client';
-
-// const ImageSlider = () => {
-//   const [imageLinks, setImageLinks] = useState([]);
-//   const folderId = '126qTT7sPi0MQgFgOttKGwWl9aKyuZ4sJ'; 
-//   const apiKey = 'AIzaSyAjTf2BaoCVkvoSkac-zRh4JJI9H2BByQs'; 
-
-//   useEffect(() => {
-//     const fetchImages = async () => {
-//       const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType)`;
-
-//       try {
-//         const response = await fetch(url);
-//         const data = await response.json();
-//         console.log('Fetched Data:', data);  // Debug API response
-
-//         if (data.files) {
-//           const links = data.files.map(file => `https://drive.google.com/uc?export=view&id=${file.id}`);
-//           setImageLinks(links);
-//         } else {
-//           console.error('No files found in folder.');
-//         }
-//       } catch (error) {
-//         console.error('Error fetching images:', error);
-//       }
-//     };
-
-//     fetchImages();
-//   }, [folderId, apiKey]);
-
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 3000,
-//   };
-
-//   return (
-    
-//     <div className="slider-container">
-    
-//       {imageLinks.length > 0 ? (
-         
-//         <Slider {...settings}>
-//           {imageLinks.map((image, index) => (
-//             <div key={index}>
-      
-//               <img src={image} alt={`Slide ${index + 1}`} className="slider-image" />
-//             </div>
-//           ))}
-//         </Slider>
-//       ) : (
-//         <p>Loading images...</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ImageSlider;
-import '../styles/slider.css'; 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+// Custom arrow components
+const NextArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 z-10"
+  >
+    ❯
+  </button>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 z-10"
+  >
+    ❮
+  </button>
+);
+
 const ImageSlider = () => {
-  
-  
   const imageFiles = [
     'image1.jpeg',
     'image2.jpeg',
     'image3.jpeg',
     // Add all the file names from your carousel folder
   ];
-  
-  const images = imageFiles.map(file => `/corousel/${file}`);
+
+  const images = imageFiles.map((file) => `/corousel/${file}`);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
-    <div className="slider-container">
-      <h1 className="gallery-heading">Gallery</h1>
-      <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index} className="slide-wrapper">
-            <img src={image} alt={`Slide ${index + 1}`} className="slider-image" />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <section className="w-full py-12 text-center">
+      {/* Header */}
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">
+        Gallery
+      </h2>
+
+      {/* Slider Wrapper */}
+      <div className="relative w-[85%] md:w-[70%] mx-auto rounded-2xl overflow-hidden shadow-lg p-4">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="flex justify-center items-center h-[500px] relative"
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-[500px] object-cover rounded-xl"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
   );
 };
 

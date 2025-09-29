@@ -38,27 +38,36 @@ const NewsAndUpdates = () => {
 
 
     return (
-        <div className="news-container">
-            <div className='news-content'>
-                <h2 className="news-heading">News & Updates</h2>
-                <p>The latest news and updates</p>
+        <div className="news-container px-4 sm:px-6 lg:px-8">
+            <div className='news-content text-center lg:text-left'>
+                <h2 className="news-heading text-3xl sm:text-4xl lg:text-5xl">News & Updates</h2>
+                <p className="text-base sm:text-lg lg:text-xl">The latest news and updates</p>
                 
             </div>
-          <div className="posts-container">
-            <div className='left'>
-            <iframe width="600" height="320" src="https://www.youtube.com/embed/4OrD4Y1Nd5c" title="Innovation lab" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div className="posts-container flex-col lg:flex-row gap-4 lg:gap-8 xl:gap-12">
+            <div className='left w-full lg:w-1/2 flex justify-center lg:justify-start'>
+              <video 
+                className="w-full h-auto rounded-lg shadow-lg"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src="assets/Innovation_lab.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <div className='right'>
+            <div className='right w-full lg:w-1/2 space-y-4'>
             {posts.length > 0 ? (
               posts.map((post, index) => (
                 <div key={index} className="post">
-                  <h3 className="post-title">{post.title}</h3>
-                  <p className="post-description">{post.description}</p>
-                  <p className="post-date">{post.date}</p>
+                  <h3 className="post-title text-lg sm:text-xl">{post.title}</h3>
+                  <p className="post-description text-sm sm:text-base">{post.description}</p>
+                  <p className="post-date text-xs sm:text-sm">{post.date}</p>
                 </div>
               ))
             ) : (
-              <p>No posts available</p>
+              <p className="text-center lg:text-left">No posts available</p>
             )}
             </div>
        

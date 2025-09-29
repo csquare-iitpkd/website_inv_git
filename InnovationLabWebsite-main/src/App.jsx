@@ -13,6 +13,7 @@ import ReadMore from './pages/read_more';
 import AdminConfig from './components/adminconfig';
 import AdminLoginPage from './pages/admin_login_page';
 import AdminDashboard from "./pages/admin_page";
+import Guidline from "./pages/guideLine"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/facilities" element={<Facilities />} /> 
         <Route path="/log_registration" element={<LogRegistration />} /> 
         <Route path="/ta_schedule" element={<TASchedule />} /> 
+        <Route path="/guidline" element={<Guidline/>} />
         <Route path="/projects" element={<Projects />} /> 
         <Route path="/read-more/:projectId" element={<ReadMore />} />
         <Route path="/external_user_register" element={<ExternalUserRegistration />} /> 
