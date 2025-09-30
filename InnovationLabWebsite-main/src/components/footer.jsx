@@ -45,6 +45,24 @@ const Footer = () => {
             <FaMapMarkerAlt className="footer-icon" />
           </a>
         </div>
+
+        <div className="footer-contact-section">
+          <h3>Contact Us</h3>
+          <p>Innovation centre </p>
+          <p>C06/ Room No 003</p>
+          <p>Permanent campus </p>
+          <p>IIT Palakkad, Kerala - 678623</p>
+
+          {/* Clickable Location Icon */}
+          <a 
+            href="https://www.google.com/maps?q=Indian+Institute+of+Technology+Palakkad" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-map-link"
+          >
+            <FaMapMarkerAlt className="footer-icon" />
+          </a>
+        </div>
       </div>
 
       <div className="footer-social">
