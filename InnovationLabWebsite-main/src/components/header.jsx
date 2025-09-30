@@ -52,7 +52,7 @@ const Header = () => {
                         <Link to="/ta_schedule" className="header__nav-link">TA</Link>
                     </li> */}
                     <li className="header__nav-item">
-                        <Link to="/guidline" className="header__nav-link">GuidLine</Link>
+                        <Link to="/guidline" className="header__nav-link">GuideLine</Link>
                     </li>
                     
                 </ul>
@@ -136,6 +136,19 @@ const Header = () => {
                         TA
                         </Link>
                     </li> */}
+                     <li>
+                        <Link 
+                        to="/guideline" 
+                        className="relative block text-white text-lg py-2 
+                                    after:content-[''] after:absolute after:left-0 after:bottom-0 
+                                    after:h-[2px] after:w-0 after:bg-blue-400 
+                                    after:transition-all after:duration-300 
+                                    hover:after:w-full" 
+                        onClick={toggleMobileMenu}
+                        >
+                        GuideLine
+                        </Link>
+                    </li>
                 </ul>
 
             </nav>
