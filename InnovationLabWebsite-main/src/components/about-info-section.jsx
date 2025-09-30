@@ -6,7 +6,7 @@ const MissionSection = () => (
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img 
-              src="./assets/images/about.jpg"
+              src="./assets/images/about_2.jpg"
               alt="Innovation Lab Facility" 
               className="rounded-lg shadow-xl"
             />
