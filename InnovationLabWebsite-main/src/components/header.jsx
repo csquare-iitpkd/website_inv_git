@@ -29,7 +29,7 @@ const Header = () => {
                         shadow-lg border-b border-gray-800 z-50">
                     {/* Logo Section - Left */}
             <div className="header__left flex items-center">
-                <img src="./assets/c_logo_t.png" alt="logo" className="header__logo h-16 lg:h-20 ml-6"/>
+                <img src="./assets/png_logo_logo-removebg-preview.jpg" alt="logo" className="header__logo h-16 lg:h-20 ml-6"/>
                 {/* <h1 className="header__title">CSQUARE IITPKD</h1> */}
             </div>
 

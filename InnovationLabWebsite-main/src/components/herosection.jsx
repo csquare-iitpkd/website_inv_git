@@ -9,6 +9,8 @@ const HeroSection = () => {
     const textContent = textContentRef.current;
     const circuitPaths = circuitPathsRef.current;
     const circuitNodes = textContent.querySelectorAll('.circuit-node');
+    // Specifically select the CSQUARE text for the glow effect
+    const csquareText = textContent.querySelector('.csquare-text');
 
     gsap.set(textContent, { opacity: 0 });
     gsap.set(circuitPaths, { strokeDasharray: (i, el) => el.getTotalLength(), strokeDashoffset: (i, el) => el.getTotalLength() });
@@ -17,6 +19,7 @@ const HeroSection = () => {
     // Create a GSAP timeline for a controlled sequence
     const tl = gsap.timeline();
 
+    // 1. Animate SVG paths drawing in
     tl.to(circuitPaths, {
       strokeDashoffset: 0,
       duration: 1.5,
@@ -39,6 +42,19 @@ const HeroSection = () => {
       duration: 1.5,
       ease: 'power3.out',
     }, "-=0.5"); // Overlap slightly for a smoother transition
+
+    // 4. ✨ NEW: Add the glowing pulse effect to "CSQUARE"
+    tl.fromTo(csquareText, 
+      { textShadow: '0 0 10px rgba(255, 255, 255, 0)' }, // Start with a transparent shadow
+      { 
+        textShadow: '0 0 25px rgba(255, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6)', // Animate to a bright white/cyan glow
+        duration: 0.8,
+        ease: 'power2.inOut',
+        yoyo: true, // Animates back to the starting state
+        repeat: 1, // Ensures the yoyo effect completes (glow in, glow out)
+      }, 
+      "-=1.2" // Start this effect shortly after the text begins to fade in
+    );
 
   }, []);
 
@@ -67,7 +83,8 @@ const HeroSection = () => {
         <div className="circuit-node absolute top-[61%] left-[48%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
 
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-100 sm:text-7xl md:text-8xl">
-          <span className="bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
+          {/* Added a className to the span for easier selection */}
+          <span className="csquare-text bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">
             CSQUARE
           </span>
         </h1>
