@@ -90,6 +90,20 @@ export default function App() {
             <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
               Follow these steps to access, register, and use the web portal for equipment booking and project management.
             </p>
+
+            {/* --- ADDED BUTTON HERE --- */}
+            <div className="mt-8">
+                <a 
+                    href="https://cfbs.iitpkd.ac.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-amber-500 text-gray-900 font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-amber-600 transform hover:scale-105 transition-all duration-300"
+                >
+                    Job Request
+                </a>
+            </div>
+            {/* --- END OF ADDED BUTTON --- */}
+
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -173,4 +187,3 @@ export default function App() {
     </div>
   );
 }
-

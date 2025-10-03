@@ -52,7 +52,7 @@ const Header = () => {
                         <Link to="/ta_schedule" className="header__nav-link">TA</Link>
                     </li> */}
                     <li className="header__nav-item">
-                        <Link to="/guidline" className="header__nav-link">GuideLine</Link>
+                        <Link to="/guidline" className="header__nav-link">Job Request</Link>
                     </li>
                     
                 </ul>
@@ -92,6 +92,11 @@ const Header = () => {
                     <li>
                         <Link 
                         to="/" 
+                        className="relative block text-white text-lg py-2 
+                                    after:content-[''] after:absolute after:left-0 after:bottom-0 
+                                    after:h-[2px] after:w-0 after:bg-blue-400 
+                                    after:transition-all after:duration-300 
+                                    hover:after:w-full" 
                         onClick={toggleMobileMenu}
                         >
                         Home
@@ -138,7 +143,7 @@ const Header = () => {
                     </li> */}
                      <li>
                         <Link 
-                        to="/guideline" 
+                        to="/guidline" 
                         className="relative block text-white text-lg py-2 
                                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                                     after:h-[2px] after:w-0 after:bg-blue-400 
@@ -146,7 +151,7 @@ const Header = () => {
                                     hover:after:w-full" 
                         onClick={toggleMobileMenu}
                         >
-                        GuideLine
+                        Job Request
                         </Link>
                     </li>
                 </ul>
