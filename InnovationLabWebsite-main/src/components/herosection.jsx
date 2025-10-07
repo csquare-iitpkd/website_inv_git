@@ -80,7 +80,7 @@ const HeroSection = () => {
         
         <div className="circuit-node absolute top-[48%] left-[30%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
         <div className="circuit-node absolute top-[36%] left-[62%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
-        <div className="circuit-node absolute top-[61%] left-[48%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
+        <div className="circuit-node absolute top-[65%] left-[48%] h-3 w-3 rounded-full bg-amber-300 shadow-[0_0_15px_rgba(252,211,77,0.8)]"></div>
 
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-100 sm:text-7xl md:text-8xl">
           {/* Added a className to the span for easier selection */}
