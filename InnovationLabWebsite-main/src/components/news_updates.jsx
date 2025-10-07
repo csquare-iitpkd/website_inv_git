@@ -3,20 +3,20 @@ import '../styles/news_updates.css';
 
 const posts = [
   {
-    title: 'Changelog for 2024',
-    description: 'Explore the latest updates and enhancements in our 2024 changelog. Discover new latest updates and enhancements in our 2024 changelog.',
-    date: 'January 01, 2021',
+    title: 'Welcome to New Website',
+    description: 'This website was entirely developed by our TAs, Innovation Center',
+    date: 'October 07, 2025',
   },
-  {
+ // {
     title: 'Understanding React Hooks',
     description: 'A comprehensive guide to understanding and using React Hooks in your projects.',
     date: 'February 15, 2021',
-  },
-  {
+ // },
+ // {
     title: 'CSS Grid Layout',
     description: 'Learn how to create complex layouts easily with CSS Grid.',
     date: 'March 10, 2021',
-  },
+  //},
 ];
 
 const NewsAndUpdates = () => {

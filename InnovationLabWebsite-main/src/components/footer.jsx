@@ -32,10 +32,10 @@ const Footer = () => {
 
           {/* Section 3: Contact Us (Main Campus) */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
-            <p>Indian Institute of Technology Palakkad,</p>
+            <h3 className="text-lg font-semibold text-white mb-4">Innovation Centre</h3>
+            <p>Agora Block</p>
             <p>Nila Campus, Kanjikode West P.O,</p>
-            <p>Palakkad, Kerala - 678623</p>
+            <p>IIT Palakkad, Kerala - 678623</p>
             <a 
               href="https://www.google.com/maps?q=Indian+Institute+of+Technology+Palakkad" // Using a real Google Maps link
               target="_blank" 
@@ -50,7 +50,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Innovation Centre</h3>
             <p>C06/ Room No 003</p>
-            <p>Permanent campus</p>
+            <p>Verghese Kurien Block (C06 Block)</p>
             <p>IIT Palakkad, Kerala - 678623</p>
             <a 
               href="https://www.google.com/maps?q=Indian+Institute+of+Technology+Palakkad" // Using a real Google Maps link
