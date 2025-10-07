@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     // Main footer container with a darker gray background
     <footer className="bg-gray-400 text-gray-900 font-sans">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      {/* The "py-12" class was changed to "pt-12 pb-8" to reduce the bottom padding.
+        This closes the gap above the copyright bar.
+      */}
+      <div className="max-w-7xl mx-auto pt-12 pb-8 px-4 sm:px-6 lg:px-8">
         {/* Grid layout for the footer sections */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           
@@ -63,7 +66,7 @@ const Footer = () => {
         </div>
 
         {/* Divider and Centered Social Media Icons */}
-        <div className="mt-10 pt-8 border-t border-gray-500 flex justify-center items-center">
+        <div className="mt-4 pt-3 border-t border-gray-500 flex justify-center items-center">
           <div className="flex space-x-6">
             <a href="mailto:csquare@iitpkd.ac.in" className="text-gray-700 hover:text-black transition-colors duration-300"><FaEnvelope size="1.4em" /></a>
             <a href="https://instagram.com" className="text-gray-700 hover:text-black transition-colors duration-300"><FaInstagram size="1.4em" /></a>
@@ -73,8 +76,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom bar with copyright info, now darker with lighter text */}
+      {/* Bottom bar with copyright info */}
       <div className="bg-gray-800 py-4 px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm text-gray-200">
           © {new Date().getFullYear()} Indian Institute of Technology Palakkad. All Rights Reserved. Managed by ananthu@iitpkd.ac.in
