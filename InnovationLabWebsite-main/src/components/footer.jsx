@@ -30,12 +30,12 @@ const Footer = () => {
 
           {/* Section 3: Contact Us (Main Campus) */}
           <div className="mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold text-black mb-4">Contact Us</h3>
-            <p>Indian Institute of Technology Palakkad,</p>
+            <h3 className="text-lg font-semibold text-black mb-4">Innovation Centre</h3>
+            <p>Agora Block</p>
             <p>Nila Campus, Kanjikode West P.O,</p>
-            <p>Palakkad, Kerala - 678623</p>
+            <p>IIT Palakkad, Kerala - 678623</p>
             <a 
-              href="https://maps.app.goo.gl/m7sA2tLSSEb4eUE76"
+              href="https://www.google.com/maps?q=Indian+Institute+of+Technology+Palakkad"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block mt-2 text-gray-700 hover:text-black transition-colors duration-300"
@@ -48,10 +48,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-black mb-4">Innovation Centre</h3>
             <p>C06/ Room No 003</p>
-            <p>Permanent campus</p>
+            <p>Verghese Kurien Block (C06 Block)</p>
             <p>IIT Palakkad, Kerala - 678623</p>
             <a 
-              href="https://maps.app.goo.gl/9DqjYkF6fL3aE8cQ9"
+              href="https://www.google.com/maps?q=Indian+Institute+of+Technology+Palakkad"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block mt-2 text-gray-700 hover:text-black transition-colors duration-300"
