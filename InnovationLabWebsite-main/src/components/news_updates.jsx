@@ -8,14 +8,14 @@ const posts = [
     date: 'October 07, 2025',
   },
  // {
-    title: 'Understanding React Hooks',
-    description: 'A comprehensive guide to understanding and using React Hooks in your projects.',
-    date: 'February 15, 2021',
+ //   title: 'Understanding React Hooks',
+ //   description: 'A comprehensive guide to understanding and using React Hooks in your projects.',
+ //   date: 'February 15, 2021',
  // },
  // {
-    title: 'CSS Grid Layout',
-    description: 'Learn how to create complex layouts easily with CSS Grid.',
-    date: 'March 10, 2021',
+ //   title: 'CSS Grid Layout',
+ //   description: 'Learn how to create complex layouts easily with CSS Grid.',
+ //   date: 'March 10, 2021',
   //},
 ];
 
