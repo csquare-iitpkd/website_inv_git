@@ -26,7 +26,14 @@ const ImageSlider = () => {
     'image1.jpeg',
     'image2.jpeg',
     'image3.jpeg',
-    // Add all the file names from your carousel folder
+    // Add all your image file names here
+  ];
+
+  const captions = [
+    'This is a caption for image1.jpeg',
+    'This is a caption for image2.jpeg',
+    'This is a caption for image3.jpeg',
+    // Add one caption per image
   ];
 
   const images = imageFiles.map((file) => `/corousel/${file}`);
@@ -57,13 +64,23 @@ const ImageSlider = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="flex justify-center items-center h-[500px] relative"
+              className="relative h-[500px] flex justify-center items-center"
             >
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-[500px] object-cover rounded-xl"
+                className="w-full h-full object-cover rounded-xl"
               />
+
+              {/* Caption overlay */}
+              <div className="absolute bottom-0 w-full bg-black/50 py-2 px-4">
+                <p
+                  className="text-yellow-400 italic text-lg text-center"
+                  style={{ fontFamily: 'Arial, sans-serif' }}
+                >
+                  {captions[index] ?? ''}
+                </p>
+              </div>
             </div>
           ))}
         </Slider>
