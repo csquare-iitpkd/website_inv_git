@@ -26,13 +26,15 @@ const ImageSlider = () => {
     'image1.jpeg',
     'image2.jpeg',
     'image3.jpeg',
+    'image4.jpeg',
     // Add all your image file names here
   ];
 
   const captions = [
-    'This is a caption for image1.jpeg',
-    'This is a caption for image2.jpeg',
-    'This is a caption for image3.jpeg',
+    'Brainstorming for young minds',
+    'Brainstorming for young minds',
+    'Incubated startup Avinya Infinity Solutions is on a mission to build its first MVP',
+    'When Mr.Chandra Sekhar Kumar, IAS  Secretary, Ministry of Minority Affairs visited C Square',
     // Add one caption per image
   ];
 
