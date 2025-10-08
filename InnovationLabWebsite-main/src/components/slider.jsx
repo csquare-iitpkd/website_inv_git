@@ -34,7 +34,7 @@ const ImageSlider = () => {
     'Brainstorming for young minds',
     'Brainstorming for young minds',
     'Incubated startup Avinya Infinity Solutions is on a mission to build its first MVP',
-    'When Mr.Chandra Sekhar Kumar, IAS  Secretary, Ministry of Minority Affairs visited C Square',
+    'When Mr.Chandra Shekhar Kumar, IAS  Secretary, Ministry of Minority Affairs visited C Square',
     // Add one caption per image
   ];
 
