@@ -29,8 +29,6 @@
 // export default About;
 
 import React from 'react'
-import Header from '../components/header';
-import Footer from '../components/footer';
 // import HeroSection from './About_hero';
 import MissionSection from '../components/about-info-section';
 import TeachingAssistantsSection from '../components/team_member';
@@ -42,20 +40,12 @@ export default function Newabout() {
 
 
     return (
-          // <div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
         <>
-          <div className="sticky top-0 z-50">
-            <Header />
-          </div>
-        
           <main className="flex-grow relative z-10 ">
             <MissionSection />
             <LabAssistantsSection/>
             <TeachingAssistantsSection /> 
           </main>
-          
-          <Footer className="relative z-10" />
-        {/* // </div> */}
         </>
     );
 };
