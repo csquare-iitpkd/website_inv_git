@@ -7,17 +7,21 @@ import Footer from '../components/footer';
 import AnimatedPinDemo from '../components/card';
 import '../styles/home.css';
 
+
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container bg-white"> 
       <Header />
       <HeroSection />
-      {/* This section will have the background image */}
-      <div className="content-background">
-        {/* <AnimatedPinDemo /> */}
+
+      <div 
+        className="bg-scroll bg-cover bg-center py-16" 
+        style={{ backgroundImage: `url("/assets/bc.jpg")` }}
+      >
         <NewsAndUpdates />
         <ImageSlider />
       </div>
+
       <Footer />
     </div>
   );

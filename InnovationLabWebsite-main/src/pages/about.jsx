@@ -42,8 +42,8 @@ export default function Newabout() {
 
 
     return (
-          <div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
-        
+          // <div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
+        <>
           <div className="sticky top-0 z-50">
             <Header />
           </div>
@@ -55,7 +55,8 @@ export default function Newabout() {
           </main>
           
           <Footer className="relative z-10" />
-        </div>
+        {/* // </div> */}
+        </>
     );
 };
 

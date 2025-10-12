@@ -1,11 +1,11 @@
 /* Apply background globally */
-.power-machine-page {
+/* .power-machine-page {
   background-image: url('../../public/assets/bc.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional parallax */
-}
+/* } */ 
 
 /* Remove background from container */
 .power-machine-container {

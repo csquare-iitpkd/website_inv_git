@@ -30,14 +30,14 @@
 }
 
 /* Main background for the middle section */
-.content-background {
+/* .content-background {
     background-image: url('../../public/assets/bc.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     padding: 20px 0;
-}
+} */
 
 
 /* .content-background {

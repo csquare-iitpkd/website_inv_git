@@ -63,7 +63,8 @@ const InstructionCard = ({ icon, title, children }) => (
 export default function App() {
   return (
     // This main div now controls the overall page background color
-    <div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
+    //<div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
+    <>
       <Header />
       
       {/* This wrapper is now relative, to act as a container for the absolute positioned background grid */}
@@ -184,6 +185,7 @@ export default function App() {
         </main>
       </div>
       <Footer/>
-    </div>
+       {/* </div> */}
+    </>
   );
 }

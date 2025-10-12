@@ -1,5 +1,8 @@
+// App.jsx
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './App.css';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/home';
@@ -15,24 +18,27 @@ import AdminLoginPage from './pages/admin_login_page';
 import AdminDashboard from "./pages/admin_page";
 import Guidline from "./pages/guideLine"
 
+import Layout from './components/Layout'; 
+
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} /> 
-        <Route path="/facilities" element={<Facilities />} /> 
-        <Route path="/log_registration" element={<LogRegistration />} /> 
-        <Route path="/ta_schedule" element={<TASchedule />} /> 
-        <Route path="/guidline" element={<Guidline/>} />
-        <Route path="/projects" element={<Projects />} /> 
-        <Route path="/read-more/:projectId" element={<ReadMore />} />
-        <Route path="/external_user_register" element={<ExternalUserRegistration />} /> 
-        <Route path="/adminconfig" element={<AdminConfig />} /> 
-        <Route path="/admin_login_page" element={<AdminLoginPage />} /> 
-        <Route path="/admin_page" element={<AdminDashboard />} />
-
-        
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} /> 
+          <Route path="about" element={<About />} /> 
+          <Route path="facilities" element={<Facilities />} /> 
+          <Route path="log_registration" element={<LogRegistration />} /> 
+          <Route path="ta_schedule" element={<TASchedule />} /> 
+          <Route path="guidline" element={<Guidline/>} />
+          <Route path="projects" element={<Projects />} /> 
+          <Route path="read-more/:projectId" element={<ReadMore />} />
+          <Route path="external_user_register" element={<ExternalUserRegistration />} /> 
+          <Route path="adminconfig" element={<AdminConfig />} /> 
+          <Route path="admin_login_page" element={<AdminLoginPage />} /> 
+          <Route path="admin_page" element={<AdminDashboard />} /> 
+        </Route>
       </Routes>
     </Router>
   );
