@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // You would replace this with your actual backend URL
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -23,7 +23,7 @@ export const getActiveProjects = () => api.get('/projects');
 export const getProjectById = (id) => api.get(`/projects/${id}`);
 
 // --- Auth Routes ---
-export const googleLogin = (tokenData) => api.post('/auth/google-login', tokenData);
+export const googleLogin = (tokenData) => api.post('/auth/google', tokenData);
 
 // --- Protected Routes ---
 export const getMyProjects = () => api.get('/projects/my-projects');

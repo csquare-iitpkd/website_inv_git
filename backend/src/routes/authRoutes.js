@@ -7,17 +7,17 @@ const router = express.Router();
 
 router.post("/google", async (req, res) => {
   try {
-    const { id_token } = req.body;
-    if (!id_token) return res.status(400).json({ error: "id_token required" });
+    const { token } = req.body;
+    if (!token) return res.status(400).json({ error: "token required" });
 
-    const payload = await verifyGoogleIdToken(id_token);
+    const payload = await verifyGoogleIdToken(token);
 
     const user = await upsertUserFromGoogle(payload);
 
-    const token = createSessionToken(user);
+    const _token = createSessionToken(user);
 
 
-    return res.json({ token, user });
+    return res.json({ _token, user });
   } catch (err) {
     console.error("Auth error:", err);
     return res.status(500).json({ error: "Authentication failed" });

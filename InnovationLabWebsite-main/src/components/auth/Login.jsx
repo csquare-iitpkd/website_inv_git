@@ -8,16 +8,15 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSuccess = async (credentialResponse) => {
-        console.log(credentialResponse);
         const idToken = credentialResponse.credential;
         const decodedToken = jwtDecode(idToken);
-        
+       
         // Basic validation for IIT Palakkad email
         if (decodedToken.email && decodedToken.email.endsWith('@smail.iitpkd.ac.in')) {
             try {
                 // You would send the token to your backend here
                 const response = await api.googleLogin({ token: idToken });
-                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('---------------- token', response.data.token);
                 localStorage.setItem('user', JSON.stringify(response.data.user));
 
                 // --- MOCK BEHAVIOR ---
@@ -52,6 +51,7 @@ const Login = () => {
                         onSuccess={handleSuccess}
                         onError={handleError}
                         useOneTap
+
                     />
                 </div>
                 <p className="text-xs text-gray-500 mt-8">
