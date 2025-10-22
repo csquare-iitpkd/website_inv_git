@@ -7,6 +7,7 @@ const Logout = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        window.dispatchEvent(new Event('loginStatusChange')); // 🔔 trigger event
         navigate('/');
         // You might want to also call googleLogout() from '@react-oauth/google' if needed
     };

@@ -14,19 +14,11 @@ const Login = () => {
         // Basic validation for IIT Palakkad email
         if (decodedToken.email && decodedToken.email.endsWith('@smail.iitpkd.ac.in')) {
             try {
-                // You would send the token to your backend here
                 const response = await api.googleLogin({ token: idToken });
-                localStorage.setItem('---------------- token', response.data.token);
+                localStorage.setItem('token', response.data._token);
                 localStorage.setItem('user', JSON.stringify(response.data.user));
-
-                // --- MOCK BEHAVIOR ---
-                console.log("Simulating backend login for:", decodedToken.email);
-                localStorage.setItem('token', idToken); // Use idToken as mock token
-                localStorage.setItem('user', JSON.stringify({ name: decodedToken.name, email: decodedToken.email, picture: decodedToken.picture }));
-                // --- END MOCK BEHAVIOR ---
-
+                window.dispatchEvent(new Event('loginStatusChange')); // 🔔 trigger event
                 navigate('/dashboard');
-
             } catch (error) {
                 console.error("Login failed:", error);
                 alert("Login failed. Please try again.");

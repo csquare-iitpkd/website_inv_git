@@ -10,18 +10,19 @@ const Header = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        setIsLoggedIn(!!token);
-        
-        // Listen for storage changes to update login status
-        const handleStorageChange = () => {
+        const checkLoginStatus = () => {
             const token = localStorage.getItem('token');
             setIsLoggedIn(!!token);
         };
-        window.addEventListener('storage', handleStorageChange);
+
+        checkLoginStatus(); // check on mount
+
+        window.addEventListener('loginStatusChange', checkLoginStatus);
+        window.addEventListener('storage', checkLoginStatus); // optional for other tabs
 
         return () => {
-            window.removeEventListener('storage', handleStorageChange);
+            window.removeEventListener('loginStatusChange', checkLoginStatus);
+            window.removeEventListener('storage', checkLoginStatus);
         };
     }, []);
 
@@ -30,9 +31,11 @@ const Header = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        window.dispatchEvent(new Event('loginStatusChange')); // 🔔 trigger event
         setIsLoggedIn(false);
         navigate('/');
     };
+
 
     const renderAuthLink = () => {
         if (isLoggedIn) {
