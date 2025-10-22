@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ProjectCard = ({ project }) => {
   return (
     <Link to={`/project/${project.id}`} className="block bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 ease-in-out">
-      <div className="relative">
+      <div className="relative text-white">
         <img 
           className="w-full h-48 object-cover" 
           src={project.image || 'https://placehold.co/600x400/171717/FFFFFF?text=Project'} 

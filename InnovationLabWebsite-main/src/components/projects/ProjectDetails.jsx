@@ -9,7 +9,7 @@ const ProjectDetails = ({ project }) => {
     <div className="text-white min-h-screen p-4 sm:p-8">
       <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl overflow-hidden">
         <img
-          className="w-full h-64 sm:h-80 object-cover"
+          className="w-full h-64 sm:h-80 object-cover bg-gray-900"
           src={project.image || 'https://placehold.co/800x400/171717/FFFFFF?text=Project'}
           alt={project.projectName}
         />

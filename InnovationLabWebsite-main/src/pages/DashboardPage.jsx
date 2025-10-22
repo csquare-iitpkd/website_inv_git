@@ -12,16 +12,8 @@ const DashboardPage = () => {
 
     const fetchMyProjects = async () => {
         try {
-            // const response = await api.getMyProjects();
-            // setMyProjects(response.data);
-
-            // --- MOCK DATA ---
-            setMyProjects([
-                { id: 1, projectName: 'My Robotic Arm', requirements: 'My requirements.', projectHandler: user.name, peopleNeeded: 3, startDate: '2025-08-01', endDate: '2026-05-30', isActive: true },
-                { id: 5, projectName: 'Secret Project', requirements: 'Top secret.', projectHandler: user.name, peopleNeeded: 1, startDate: '2025-10-01', endDate: '2026-01-01', isActive: false },
-            ]);
-            // --- END MOCK DATA ---
-
+            const response = await api.getMyProjects();
+            setMyProjects(response.data);
         } catch (error) {
             console.error("Failed to fetch user projects:", error);
         } finally {
@@ -36,11 +28,11 @@ const DashboardPage = () => {
     const handleSaveProject = async (projectData) => {
         try {
             if (editingProject) {
-                // await api.updateProject(editingProject.id, projectData);
-                console.log("Updating project:", projectData);
+                await api.updateProject(editingProject.id, projectData);
+                // console.log("Updating project:", projectData);
             } else {
-                // await api.createProject(projectData);
-                console.log("Creating project:", projectData);
+                await api.createProject(projectData);
+                // console.log("Creating project:", projectData);
             }
             fetchMyProjects(); // Refresh list
         } catch (error) {
@@ -63,8 +55,8 @@ const DashboardPage = () => {
 
     const handleToggleActive = async (project) => {
         try {
-            // await api.updateProject(project.id, { ...project, isActive: !project.isActive });
-            console.log("Toggling active status for project:", project.id);
+            await api.updateProject(project.id, { ...project, isActive: !project.isActive });
+            // console.log("Toggling active status for project:", project.id);
             fetchMyProjects(); // Refresh list
         } catch (error) {
             console.error("Failed to toggle active status:", error);
@@ -93,6 +85,7 @@ const DashboardPage = () => {
                         {myProjects.map(project => (
                             <div key={project.id} className={`bg-gray-800 rounded-lg shadow-lg p-6 ${!project.isActive && 'opacity-60'}`}>
                                 <h3 className="text-xl font-bold text-orange-400 mb-2">{project.projectName}</h3>
+                                <img src={project.imageUrl} alt={project.projectName} className="w-full h-40 object-cover rounded-md mb-4 bg-black" />
                                 <p className="text-sm text-gray-400 mb-4">{project.requirements.substring(0, 100)}...</p>
                                 <div className="flex justify-between items-center">
                                     <button onClick={() => handleEdit(project)} className="text-blue-400 hover:underline">Edit</button>

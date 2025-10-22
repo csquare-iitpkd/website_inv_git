@@ -2,7 +2,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes.js";
+import authRoute from "./routes/authRoute.js";
+import projectRoute from './routes/projectsRoute.js';
 import { requireAuth } from "./middleware/authMiddleware.js";
 
 dotenv.config();
@@ -16,7 +17,8 @@ app.use(express.json());
 app.get("/health", (req, res) => res.json({ ok: true }));
 
 // Auth
-app.use("/auth", authRoutes);
+app.use("/auth", authRoute);
+app.use('/projects', projectRoute);
 
 app.get("/hello", (req, res) => {
   res.send("Hello from Innovation Lab Backend!");
