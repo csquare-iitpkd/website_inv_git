@@ -16,9 +16,9 @@ const Login = () => {
         if (decodedToken.email && decodedToken.email.endsWith('@smail.iitpkd.ac.in')) {
             try {
                 // You would send the token to your backend here
-                // const response = await api.googleLogin({ token: idToken });
-                // localStorage.setItem('token', response.data.token);
-                // localStorage.setItem('user', JSON.stringify(response.data.user));
+                const response = await api.googleLogin({ token: idToken });
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
 
                 // --- MOCK BEHAVIOR ---
                 console.log("Simulating backend login for:", decodedToken.email);

@@ -1,0 +1,77 @@
+# Node.js dependencies
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Logs
+logs
+*.log
+logs/*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.test
+.env.local
+.env.development.local
+.env.production.local
+
+# Build output
+dist/
+build/
+coverage/
+.tmp/
+.temp/
+.cache/
+.next/
+out/
+server-dist/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: if using Docker
+docker-compose.override.yml
+*.dockerfile
+*.Dockerfile
+
+# Optional: if using Prisma or Sequelize
+prisma/generated/
+sequelize/generated/
+
+# Optional: if using testing frameworks
+coverage/
+jest-html-reporters-*
+.mocha/
+.nyc_output/
+
+# Optional: if using PM2
+.pm2/
+
+# Optional: if using ESLint/Prettier cache
+.eslintcache
+.prettier-cache/
