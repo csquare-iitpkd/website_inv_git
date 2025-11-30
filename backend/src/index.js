@@ -8,8 +8,16 @@ import { requireAuth } from "./middleware/authMiddleware.js";
 
 dotenv.config();
 const app = express();
+
+// Configure CORS using FRONTEND_URL (comma-separated allowed origins)
+const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:3000').split(',').map(s => s.trim()).filter(Boolean);
 app.use(cors({
-  origin: "*", 
+  origin: function(origin, callback) {
+    // allow requests with no origin (eg. curl, server-to-server)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
+    return callback(new Error('CORS policy: origin not allowed'), false);
+  },
   credentials: true
 }));
 app.use(express.json());

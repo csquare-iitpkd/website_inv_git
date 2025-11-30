@@ -7,7 +7,12 @@ import { db } from "./db.js";
 dotenv.config();
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
-const JWT_SECRET = process.env.JWT_SECRET || "change_this";
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+  console.error('FATAL: missing required environment variable JWT_SECRET');
+  process.exit(1);
+}
 
 export async function verifyGoogleIdToken(idToken) {
   const ticket = await client.verifyIdToken({
