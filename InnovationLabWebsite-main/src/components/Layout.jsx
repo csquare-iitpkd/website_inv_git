@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import Header from './header';
+import Footer from './footer';
 
 const Layout = () => {
   const location = useLocation();
@@ -14,9 +16,11 @@ const Layout = () => {
       className={!isHomePage ? otherPagesBackground : ''} 
       style={!isHomePage ? { backgroundImage: `url("/assets/bc.jpg")` } : {}}
     >
+      <Header />
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

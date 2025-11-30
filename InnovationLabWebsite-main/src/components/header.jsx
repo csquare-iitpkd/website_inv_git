@@ -1,12 +1,81 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 // import '../styles/header.css';
 
 const Header = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const checkLoginStatus = () => {
+            const token = localStorage.getItem('token');
+            setIsLoggedIn(!!token);
+        };
+
+        checkLoginStatus(); // check on mount
+
+        window.addEventListener('loginStatusChange', checkLoginStatus);
+        window.addEventListener('storage', checkLoginStatus); // optional for other tabs
+
+        return () => {
+            window.removeEventListener('loginStatusChange', checkLoginStatus);
+            window.removeEventListener('storage', checkLoginStatus);
+        };
+    }, []);
+
     const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.dispatchEvent(new Event('loginStatusChange')); // 🔔 trigger event
+        setIsLoggedIn(false);
+        navigate('/');
+    };
+
+
+    const renderAuthLink = () => {
+        if (isLoggedIn) {
+            return (
+                <>
+                    <li>
+                        <Link to="/dashboard" className="relative text-gray-800 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full">
+                            Dashboard
+                        </Link>
+                    </li>
+                    <li>
+                        <button onClick={handleLogout} className="relative text-gray-800 transition-colors duration-300 hover:text-orange-600">
+                            Logout
+                        </button>
+                    </li>
+                </>
+            );
+        } else {
+            return (
+                <li>
+                    <Link to="/login" className="relative text-gray-800 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full">
+                        Login
+                    </Link>
+                </li>
+            );
+        }
+    }
+    
+    const renderMobileAuthLink = () => {
+        if (isLoggedIn) {
+            return (
+                <>
+                    <li><Link to="/dashboard" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Dashboard</Link></li>
+                     <li><button onClick={() => { handleLogout(); toggleMobileMenu(); }} className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 w-full text-left">Logout</button></li>
+                </>
+            );
+        } else {
+            return <li><Link to="/login" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Login</Link></li>;
+        }
+    }
 
     return (
         <header className="header sticky top-0 flex justify-between items-center px-4 lg:px-6 
@@ -37,10 +106,16 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/projects" className="relative text-gray-800 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full">
+                            Projects
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/guidline" className="relative text-gray-800 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full">
                             Job Request
                         </Link>
                     </li>
+                    {renderAuthLink()}
                 </ul>
             </nav>
             <div className="header__left flex items-center">
@@ -64,7 +139,9 @@ const Header = () => {
                     <li><Link to="/" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Home</Link></li>
                     <li><Link to="/about" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>About us</Link></li>
                     <li><Link to="/facilities" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Facilities</Link></li>
+                    <li><Link to="/projects" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Projects</Link></li>
                     <li><Link to="/guidline" className="relative block text-gray-800 text-lg py-2 transition-colors duration-300 hover:text-orange-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full" onClick={toggleMobileMenu}>Job Request</Link></li>
+                    {renderMobileAuthLink()}
                 </ul>
             </nav>
         </header>

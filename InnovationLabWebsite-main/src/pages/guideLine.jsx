@@ -1,9 +1,5 @@
 import React from 'react';
 
-// Assuming Header and Footer are in a components folder like this:
-import Header from '../components/header';
-import Footer from '../components/footer';
-
 
 // Using inline SVGs as components for easy reuse and styling.
 
@@ -65,7 +61,6 @@ export default function App() {
     // This main div now controls the overall page background color
     //<div className="flex flex-col min-h-screen bg-fixed bg-cover bg-center " style={{backgroundImage:`url("./assets/bc.jpg")`}}  >
     <>
-      <Header />
       
       {/* This wrapper is now relative, to act as a container for the absolute positioned background grid */}
       <div className="relative">
@@ -184,7 +179,6 @@ export default function App() {
           </footer>
         </main>
       </div>
-      <Footer/>
        {/* </div> */}
     </>
   );
