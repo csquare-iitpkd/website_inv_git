@@ -12,7 +12,7 @@ const Login = () => {
         const decodedToken = jwtDecode(idToken);
        
         // Basic validation for IIT Palakkad email
-        if (decodedToken.email && decodedToken.email.endsWith('@smail.iitpkd.ac.in')) {
+        if (decodedToken.email && (decodedToken.email.endsWith('@smail.iitpkd.ac.in') || decodedToken.email.endsWith('@iitpkd.ac.in'))) {
             try {
                 const response = await api.googleLogin({ token: idToken });
                 localStorage.setItem('token', response.data._token);
