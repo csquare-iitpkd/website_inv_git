@@ -85,7 +85,7 @@ const DashboardPage = () => {
                         {myProjects.map(project => (
                             <div key={project.id} className={`bg-gray-800 rounded-lg shadow-lg p-6 ${!project.isActive && 'opacity-60'}`}>
                                 <h3 className="text-xl font-bold text-orange-400 mb-2">{project.projectName}</h3>
-                                <img src={project.imageUrl} alt={project.projectName} className="w-full h-40 object-cover rounded-md mb-4 bg-black" />
+                                <img src={project.image} alt={project.projectName} className="w-full h-40 object-cover rounded-md mb-4 bg-black" />
                                 <p className="text-sm text-gray-400 mb-4">{project.requirements.substring(0, 100)}...</p>
                                 <div className="flex justify-between items-center">
                                     <button onClick={() => handleEdit(project)} className="text-blue-400 hover:underline">Edit</button>

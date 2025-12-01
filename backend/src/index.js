@@ -20,7 +20,10 @@ app.use(cors({
   },
   credentials: true
 }));
-app.use(express.json());
+
+// UPDATED: Increased body limit to support Base64 images (2mb is enough for a 1mb file)
+app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ limit: '2mb', extended: true }));
 
 app.get("/health", (req, res) => res.json({ ok: true }));
 
